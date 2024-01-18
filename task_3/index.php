@@ -11,6 +11,7 @@
         <?php 
         $number = array( 1,2,3,4,5,6,7,8,10);
         $i = 0;
+        
 
         foreach ($number as $numerDef ) {
             $number[$numerDef];
@@ -20,14 +21,38 @@
         }
         
         for ( $i = 0; $i < 31; $i++ )
+        {
         echo "<br> $i";
+        }
+       
         
 
         ?>
+        <div class="phph">
+        <?php 
+
+        $tenNum = 0;
+        $superNum =0;
+        for ( $tenNum = 0; $tenNum < 10; $tenNum++ )
+            {
+                for ( $superNum = 0; $superNum < 10; $superNum++ )
+                {
+                    echo $tenNum. $superNum. ",";
+                }
+            }
+        ?>
+        </div>
+        
 </div>
 <style>
+    body{
+        
+    }
+    .phph{
+        margin-top: 700px;
+    }
     .php {
-        display: flex;
+      display: flex;
         
     }
     p{
