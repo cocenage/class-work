@@ -1,1 +1,2 @@
-<h1>онас</h1>
+@include('includes.menu')
+<h1>О нас</h1>
