@@ -10,7 +10,7 @@
     <div class="php">
         <?php 
         $number = array( 1,2,3,4,5,6,7,8,10);
-
+        $i = 0;
 
         foreach ($number as $numerDef ) {
             $number[$numerDef];
@@ -18,6 +18,11 @@
         
             
         }
+        
+        for ( $i = 0; $i < 31; $i++ )
+        echo "<br> $i";
+        
+
         ?>
 </div>
 <style>
@@ -34,5 +39,8 @@
 
     }
 </style>
+
+
+
 </body>
 </html>
