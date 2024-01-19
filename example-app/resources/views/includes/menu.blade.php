@@ -14,5 +14,7 @@
     <li>
         <a href="{{ route('price') }}">{{ __('Прайс') }}</a>
     </li>
-
+    <li>
+        <a href="{{ route('blog') }}">{{ __('блог') }}</a>
+    </li>
 </ul>

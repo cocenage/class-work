@@ -28,3 +28,4 @@ Route::get('/about',[\App\Http\Controllers\FrontendContoller::class, 'about'])->
 Route::get('/portfolio',[\App\Http\Controllers\FrontendContoller::class, 'portfolio'])->name('portfolio');
 Route::get('/contact',[\App\Http\Controllers\FrontendContoller::class, 'contact'])->name('contact');
 Route::get('/price',[\App\Http\Controllers\FrontendContoller::class, 'price'])->name('price');
+Route::get('/blog',[\App\Http\Controllers\FrontendContoller::class, 'blog'])->name('blog');
