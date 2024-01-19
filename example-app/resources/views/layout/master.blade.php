@@ -8,6 +8,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="{{ asset('/assets/style/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/image') }}">
     <script defer src="{{ asset('/assets/javascript/app.js') }}"></script>
 </head>
 <body>
