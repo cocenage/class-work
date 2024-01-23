@@ -33,4 +33,5 @@ Route::get('/blog',[\App\Http\Controllers\FrontendContoller::class, 'blog'])->na
 Route::prefix('/post')->group(function (){
     Route::get('/index', [\App\Http\Controllers\PostController::class, 'index'])->name('post.index');
     Route::get('/create', [\App\Http\Controllers\PostController::class, 'create'])->name('post.create');
+    Route::post('/store', [\App\Http\Controllers\PostController::class, 'store'])->name('post.store');
 });

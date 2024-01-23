@@ -27,7 +27,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+           'title' => 'required',
+            'text' => 'required',
+            'image' => 'required|image|mimes:jpg,png,jpeg,svg,svo|max:2048'
+        ]);
     }
 
     /**
