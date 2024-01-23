@@ -12,7 +12,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('post.index');
+        $posts = Post::all();
+        return view('post.index', compact('posts'));
     }
 
     /**
@@ -31,19 +32,19 @@ class PostController extends Controller
         $request->validate([
            'title' => 'required',
             'text' => 'required',
-            'image' => 'required|image|mimes:jpg,png,jpeg,svg,svo|max:2048'
+            'image' => 'required|image|mimes:jpg,png,jpeg,svg|max:2048'
         ]);
         //здесь берем данные из всех текстовых полей
         $input = $request->all();
         // здксчь берем картинки из поле с name = image
         if ($image = $request ->file('image')) {
-            $destionPath = 'image/';
-            $profilImage = date('YmHis'). "." . $image->getClientOriginalExtension();
-            $image->move($destionPath,$profilImage);
-            $input['image'] = "$profilImage";
+            $destionPath = 'images/';
+            $profileImage = date('YmHis'). "." . $image->getClientOriginalExtension();
+            $image->move($destionPath,$profileImage);
+            $input['image'] = "$profileImage";
         }
 
-        Post::created($input);
+        Post::create($input);
 
         return redirect()->route('post.index')->with('success', 'Ваша кошкадевочка довольна');
     }

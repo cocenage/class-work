@@ -10,9 +10,9 @@ class Post extends Model
     use HasFactory;
     //связь с таблицей пост
     protected $table = 'posts';
-    //указываем с какими полями можем работать модель пост 
+    //указываем с какими полями можем работать модель пост
     protected $fillable  = [
-        'tittle',
+        'title',
         'text',
         'image'
     ];

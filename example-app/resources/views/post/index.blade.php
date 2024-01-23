@@ -13,29 +13,25 @@
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">название поста кошкодевочки</th>
+                    <th scope="col">описание поста кошкодевочки</th>
+                    <th scope="col">изображение кошкадевочки</th>
+                    <th scope="col">действие кошкадевочки}}}</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+                @forelse($posts as $post)
+                    <tr>
+                        <th scope="row">{{$post->id}}</th>
+                        <td>{{$post->title}}</td>
+                        <td>{{$post->text}}</td>
+                        <td><img width="150px" height="150px" src="/images/{{$post->image}}" alt=""></td>
+                    </tr>
+                @empty
+                {{__('данные ликвидированы')}}
+
+                @endforelse
+
                 </tbody>
             </table>
         </div>
