@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -32,6 +33,19 @@ class PostController extends Controller
             'text' => 'required',
             'image' => 'required|image|mimes:jpg,png,jpeg,svg,svo|max:2048'
         ]);
+        //здесь берем данные из всех текстовых полей
+        $input = $request->all();
+        // здксчь берем картинки из поле с name = image
+        if ($image = $request ->file('image')) {
+            $destionPath = 'image/';
+            $profilImage = date('YmHis'). "." . $image->getClientOriginalExtension();
+            $image->move($destionPath,$profilImage);
+            $input['image'] = "$profilImage";
+        }
+
+        Post::created($input);
+
+        return redirect()->route('post.index')->with('success', 'Ваша кошкадевочка довольна');
     }
 
     /**
