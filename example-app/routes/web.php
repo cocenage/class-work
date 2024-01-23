@@ -29,3 +29,8 @@ Route::get('/portfolio',[\App\Http\Controllers\FrontendContoller::class, 'portfo
 Route::get('/contact',[\App\Http\Controllers\FrontendContoller::class, 'contact'])->name('contact');
 Route::get('/price',[\App\Http\Controllers\FrontendContoller::class, 'price'])->name('price');
 Route::get('/blog',[\App\Http\Controllers\FrontendContoller::class, 'blog'])->name('blog');
+
+Route::prefix('/post')->group(function (){
+    Route::get('/index', [\App\Http\Controllers\PostController::class, 'index'])->name('post.index');
+    Route::get('/create', [\App\Http\Controllers\PostController::class, 'create'])->name('post.create');
+});
