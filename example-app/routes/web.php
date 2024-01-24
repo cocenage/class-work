@@ -37,4 +37,6 @@ Route::prefix('/post')->group(function (){
     Route::post('/store', [\App\Http\Controllers\PostController::class, 'store'])->name('post.store');
     Route::put('/update/{post}', [\App\Http\Controllers\PostController::class, 'update'])->name('post.update');
     Route::delete('/delete/{post}', [\App\Http\Controllers\PostController::class, 'destroy'])->name('post.delete');
+
+    Route::get('/show/{post}', [\App\Http\Controllers\PostController::class, 'show'])->name('post.show');
 });
