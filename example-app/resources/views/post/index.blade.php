@@ -26,6 +26,15 @@
                         <td>{{$post->title}}</td>
                         <td>{{$post->text}}</td>
                         <td><img width="150px" height="150px" src="/images/{{$post->image}}" alt=""></td>
+                        <td>
+                            <form action="{{route('post.delete', $post->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">
+                                    Удалить кошкопост
+                                </button>
+                            </form>
+                        </td>
                     </tr>
                 @empty
                 {{__('данные ликвидированы')}}

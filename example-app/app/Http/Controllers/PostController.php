@@ -32,7 +32,7 @@ class PostController extends Controller
         $request->validate([
            'title' => 'required',
             'text' => 'required',
-            'image' => 'required|image|mimes:jpg,png,jpeg,svg|max:2048'
+            'image' => 'required|image|mimes:jpg,png,jpeg,svg,webp|max:2048'
         ]);
         //здесь берем данные из всех текстовых полей
         $input = $request->all();
@@ -76,8 +76,9 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->route('post.index')->with('success','ваш кокшкопост удален');
     }
 }
