@@ -7,7 +7,7 @@
                 <p>{{$message}}</p>
             </div>
         @endif
-        <div class="row"><a href="{{route('post.create')}}" class="button button-primary">{{__('новый постик мяу кишмиш')}}</a></div>
+        <div class="row"><a href="{{route('article.create')}}" class="button button-primary">{{__('новый постик мяу кишмиш')}}</a></div>
         <div class="row">
             <table class="table">
                 <thead>
@@ -20,16 +20,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                @forelse($posts as $post)
+                @forelse($articles as $article)
                     <tr>
-                        <th scope="row">{{$post->id}}</th>
-                        <td>{{$post->title}}</td>
-                        <td>{{$post->text}}</td>
-                        <td><img width="150px" height="150px" src="/images/{{$post->image}}" alt=""></td>
+                        <th scope="row">{{$article->id}}</th>
+                        <td>{{$article->title}}</td>
+                        <td>{{$article->text}}</td>
+                        <td><img width="150px" height="150px" src="/images/{{$article->image}}" alt=""></td>
                         <td>
-                            <a href="{{route('post.edit', $post->id)}}" class="btn btn-success">Редактировать</a>
-                            <a href="{{route('post.show', $post->id)}}" class="btn btn-warning">Подробнее</a>
-                            <form action="{{route('post.delete', $post->id)}}" method="POST">
+                            <a href="{{route('article.edit', $article->id)}}" class="btn btn-success">Редактировать</a>
+                            <a href="{{route('article.show', $article->id)}}" class="btn btn-warning">Подробнее</a>
+                            <form action="{{route('article.delete', $article->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">

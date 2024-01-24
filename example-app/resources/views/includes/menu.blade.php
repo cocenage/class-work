@@ -15,6 +15,6 @@
         <a class="header__link" href="{{ route('price') }}">{{ __('Прайс') }}</a>
     </li>
     <li class="header__list">
-        <a class="header__link" href="{{ route('post.index') }}">{{ __('блог') }}</a>
+        <a class="header__link" href="{{ route('article.index') }}">{{ __('блог') }}</a>
     </li>
 </ul>
