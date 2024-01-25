@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <a href="#!" class="btn btn-primary">новые категории</a>
+            <a href="{{ route('category.create') }}" class="btn btn-primary">новые категории</a>
         </div>
         <div class="row">
             <table class="table">
@@ -17,11 +17,29 @@
                 </tr>
                 </thead>
                 <tbody>
+                @forelse($categories as $category)
                         <tr>
-                            <th></th>
-                            <td></td>
-                            <td></td>
+                            <th>
+                                {{$category-> id}}
+                            </th>
+                            <td>
+                                {{$category-> name}}
+                            </td>
+                            <td>
+                                {{$category-> text}}
+                            </td>
+                            <td>
+                                @if($category-> is_active == 0)
+                                    {{__('ythn')}}
+                                @else
+
+                                    {{__('frfre')}}
+                                @endif
+                            </td>
                         </tr>
+                @empty
+                    категории ликвидированы
+                @endforelse
                 </tbody>
             </table>
         </div>

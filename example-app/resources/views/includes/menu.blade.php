@@ -17,4 +17,7 @@
     <li class="header__list">
         <a class="header__link" href="{{ route('article.index') }}">{{ __('блог') }}</a>
     </li>
+    <li class="header__list">
+        <a class="header__link" href="{{ route('category.index') }}">{{ __('все категории') }}</a>
+    </li>
 </ul>
